@@ -1,0 +1,139 @@
+header {
+    grid-area: header;
+  }
+  
+  aside {
+    grid-area: aside;
+  }
+  
+  main {
+    grid-area: main;
+  }
+  
+  footer {
+    grid-area: footer;
+  }
+  
+  body {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: "header header" "aside main" "footer footer";
+  
+    min-height: 100vh;
+    margin: 2vw;
+    border: 2vw;
+  }
+  
+  main .galeria {
+    border-radius: 3vh;
+    background-image: linear-gradient(120deg, #38f7e7, #3019ff);
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  main .galeria>div {
+    border: 1px solid #000;
+    height: 106px;
+  }
+  
+  main .galeria>div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  main .galeria>div:first-child {
+    grid-area: span 2 / span 2;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  
+  main .galeria>div:hover {
+    transform: scale(1.3);
+    z-index: 99;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border-radius: 25%;
+  }
+  
+  .modal-fotos {
+    border-radius: 5px;
+    border: 1px solid black;
+    position: fixed;
+    overflow: unset;
+    border-radius: 5%;
+  }
+  
+  .modal-fotos::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+  }
+  
+  .modal-fotos .botão-fechar {
+    --size: 3rem;
+    --translate: calc(var(--size) / 3 * -1);
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    color: transparent;
+    position: absolute;
+    right: var(--translate);
+    top: var(--translate);
+  
+  }
+  
+  .modal-fotos .botão-anterior {
+    --size: 3rem;
+    --translate: calc(var(--size) / 3 * -1);
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    color: rgb(74, 250, 250);
+    position: absolute;
+    left: var(--translate);
+    bottom: var(--translate);
+  
+  }
+  
+  .modal-fotos .botão-posterior {
+    --size: 3rem;
+    --translate: calc(var(--size) / 3 * -1);
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    color: rgb(49, 27, 255);
+    position: absolute;
+    right: var(--translate);
+    bottom: var(--translate);
+  
+  }
+  
+  .modal-fotos .botão-fechar::after {
+    content: "✕";
+    color: #4457c6;
+    font-size: calc(var(--size) / 2);
+  }
+  
+  .modal-fotos .conteudo img {
+    max-height: 90vh;
+    max-width: 100%;
+  }
+  
+  
+  
+  @media screen and (max-width: 500px) {
+    body {
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px 100px 1fr 100px;
+      grid-template-areas:
+        "header"
+        "aside"
+        "content"
+        "footer";
+    }
+  }
