@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.A.B.A.I - Cadastro</title>
+    <link rel="stylesheet" href="login-assets/login.css"> <link rel="stylesheet" href="assets/responsive-grid.css">
+</head>
+
+<body>
+    <header id="inicio">
+        <button onclick="toggleAside()">Menu</button>
+        <h1>Q.A.B.A.I</h1>
+    </header>
+
+    <aside id="asside">
+        <button class="fechar-btn" onclick="fecharAside()">X</button>
+        <div>
+            <a href="inicio.html">Inicio</a>
+            <a href="comunidade.html">Comunidade</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="materiais.html">Materiais de estudo</a>
+        </div>
+    </aside>
+
+    <main class="login-main">
+        <div class="container">
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Senha:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+                <p class="message" id="registerMessage"></p>
+            </form>
+
+            <p class="switch-form">Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <a href="https://github.com/MrMeta-24">Meu github</a>
+        </div>
+    </footer>
+
+    <script src="assets/auth.js"></script> <script src="login-assets/cadastro.js"></script> <script>
+        // Funções do aside (mantidas do seu código base)
+        function toggleAside() {
+            const aside = document.getElementById('asside');
+            aside.classList.toggle('active');
+        }
+
+        function fecharAside() {
+            const aside = document.getElementById('asside');
+            aside.classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>

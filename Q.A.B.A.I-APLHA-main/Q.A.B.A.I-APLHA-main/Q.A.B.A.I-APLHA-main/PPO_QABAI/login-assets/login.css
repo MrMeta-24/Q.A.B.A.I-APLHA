@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #00fff7; /* This color will apply to text that doesn't have a more specific color rule */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(270deg, #ff00de, #00fff7, #ff005c, #00fff7);
+    background-size: 800% 800%;
+    animation: neonGradient 20s ease infinite;
+}
+
+/* Animação do gradiente neon */
+@keyframes neonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header */
+header#inicio {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+header button {
+    background: #e91e63;
+    border: none;
+    color: #fff;
+    padding: 0.6rem 1.3rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 5px 15px rgba(233,30,99,0.4);
+}
+
+header button:hover {
+    background: #c2185b;
+    box-shadow: 0 8px 20px rgba(194,24,91,0.6);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    font-family: 'Montserrat', sans-serif; /* Ensure you link this font or use a fallback */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Aside Menu */
+aside#asside {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: #2c3e50;
+    padding: 2rem 1.5rem;
+    box-shadow: 3px 0 15px rgba(0,0,0,0.4);
+    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+aside#asside.active { /* Changed from .open to .active to match your JS toggleAside */
+    left: 0;
+}
+
+aside .fechar-btn {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+aside .fechar-btn:hover {
+    color: #c0392b;
+}
+
+aside div a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 1rem 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+aside div a:hover {
+    background: #e91e63;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.6);
+    transform: translateX(5px);
+}
+
+/* Main Content Styling (Applied to the container holding login/register forms) */
+main {
+    flex-grow: 1;
+    display: flex; /* Added to center the container */
+    justify-content: center; /* Added to center the container */
+    align-items: center; /* Added to center the container */
+    padding: 20px; /* Adjust padding as needed */
+    margin: 0; /* Remove default margin from original main rule */
+}
+
+.container { /* This targets the container that holds the login/register forms */
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    padding: 2.5rem 3rem;
+    transition: box-shadow 0.3s ease;
+    width: 100%; /* Ensure it takes full width within main's flexbox */
+    max-width: 400px; /* Keep max-width for smaller forms */
+    text-align: center; /* Center text within the form container */
+    color: #333; /* Default text color for form content */
+}
+
+.container:hover {
+    box-shadow: 0 15px 60px rgba(0,0,0,0.15);
+}
+
+.form-container {
+    padding: 0; /* Remove default padding from previous .form-container as it's now on .container */
+}
+
+.form-container.hidden {
+    display: none;
+}
+
+h2 {
+    font-size: 2.2rem; /* Adjusted for better form heading */
+    margin-bottom: 25px;
+    color: #9b59b6; /* Changed from #333 to match neon theme */
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 20px; /* Increased spacing */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px; /* Increased spacing */
+    color: #555;
+    font-weight: 600;
+}
+
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group input[type="text"] {
+    width: 100%; /* Changed from calc(100% - 20px) as padding is inside */
+    padding: 12px 15px; /* Increased padding */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* More rounded corners */
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+}
+
+button[type="submit"] {
+    background-color: #e91e63; /* Use theme color */
+    color: white;
+    padding: 12px 15px; /* Increased padding */
+    border: none;
+    border-radius: 30px; /* More rounded button */
+    cursor: pointer;
+    font-size: 1.1rem; /* Slightly larger font */
+    font-weight: 700;
+    width: 100%;
+    margin-top: 20px; /* Increased spacing */
+    box-shadow: 0 6px 12px rgba(233, 30, 99, 0.5); /* Add shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #c2185b; /* Darker on hover */
+    transform: scale(1.02); /* Slight scale effect */
+}
+
+.toggle-link {
+    color: #007bff; /* Keep a distinct color or change to theme color */
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 15px; /* Increased spacing */
+    display: inline-block;
+    color: #8e44ad; /* Adjust to match theme */
+    font-weight: 600;
+}
+
+.toggle-link:hover {
+    color: #6c3483; /* Darker on hover */
+}
+
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1.3rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+    margin-top: auto;
+}
+
+footer a {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover {
+    color: #c2185b;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for the form container */
+@media (max-width: 900px) {
+    .container {
+        margin: 2rem 1rem;
+        padding: 2rem;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    aside#asside {
+        width: 100%;
+        left: -100%;
+    }
+
+    aside#asside.active { /* Changed from .open to .active */
+        left: 0;
+    }
+
+    .container {
+        padding: 1.5rem 1.2rem;
+        margin: 1.5rem 0.5rem 1rem 0.5rem;
+        border-radius: 15px;
+    }
+
+    header button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.8rem 0;
+        border-radius: 30px;
+    }
+}
+
+/* Styles for the Logout button (if it had a specific class or if you want to keep the general header button style) 
+#logoutBtn {
+    /* Uses the general header button styles by default */
+    /* If you want specific styles, uncomment and modify below */
+    /* background: #e74c3c;
+    box-shadow: 0 5px 15px rgba(231,76,60,0.4); 
+}
+
+/* If you plan to use this .btn-login class elsewhere, include it.
+   For the current login/register buttons, the `button[type="submit"]` rule covers them. */
+/* .btn-login {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(233, 30, 99, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+.btn-login:hover {
+    background-color: #c2185b;
+    transform: scale(1.05);
+}
+
+.btn-login:active {
+    transform: scale(0.95);
+} */

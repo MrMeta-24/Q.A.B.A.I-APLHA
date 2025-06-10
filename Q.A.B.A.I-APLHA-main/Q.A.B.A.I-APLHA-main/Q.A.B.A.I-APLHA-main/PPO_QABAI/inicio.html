@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.A.B.A.I</title>
+    <link rel="stylesheet" href="inicio-assets/inicio.css">
+    <link rel="stylesheet" href="inicio-assets/responsive-grid.css">
+    <script defer src="inicio-assets/inicio.js" defer></script>
+</head>
+
+<body>
+    
+
+    <header id="inicio">
+
+        <button onclick="toggleAside()">Menu</button>
+
+        <h1>Q.A.B.A.I</h1>
+        
+        <button class="btn-login" onclick="location.href='login.html'">Login</button>
+
+    </header>
+
+    <aside id="asside">
+        <button class="fechar-btn" onclick="fecharAside()">X</button>
+        <div>
+            <a href="inicio.html">Inicio</a>
+            <a href="comunidade.html">comunidade</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="materiais.html">Materiais de estudo</a>
+        </div>
+    </aside>
+
+    <main>
+
+        <h1>🌐 Bem-vindo ao Q.A.B.A.I</h1>
+        <h2>Quiz de Aprendizado Básico na Área de Informática</h2>
+      
+        <h2>🎯 Nossa Missão</h2>
+        <p>
+          O <strong>Q.A.B.A.I</strong> é uma plataforma interativa e colaborativa criada para auxiliar pessoas com 
+          <strong>pouco ou nenhum conhecimento em informática</strong> a desenvolver habilidades básicas na área. 
+          Nosso objetivo é <strong>democratizar o acesso ao aprendizado de informática</strong> de forma simples, divertida e acessível.
+        </p>
+      
+        <h2>📘 O Que Você Vai Encontrar Aqui</h2>
+        <h3>Material de Estudo</h3>
+        <p>Conteúdo em PDF com linguagem clara e acessível sobre:</p>
+        <ul>
+          <li>Introdução à informática e sua história</li>
+          <li>Hardware, periféricos e dispositivos de armazenamento</li>
+          <li>Software: sistemas operacionais, programas e diferenças entre software livre e proprietário</li>
+          <li>Uso do sistema operacional: área de trabalho, arquivos, instalação de programas</li>
+          <li>Pacote Office e Google Workspace (Word, Excel, PowerPoint)</li>
+          <li>Atalhos e digitação (como TypingClub)</li>
+          <li>Segurança digital: vírus, antivírus, senhas e backups</li>
+        </ul>
+      
+        <h2>🎮 Como Funciona</h2>
+        <p>O site é <strong>interativo e dinâmico</strong>. Você poderá:</p>
+        <ul>
+          <li>Responder quizzes em tempo real</li>
+          <li>Visualizar e responder perguntas postadas por outros usuários</li>
+          <li>Criar perguntas e contribuir com a comunidade</li>
+        </ul>
+      
+        <h2>🤝 Comunidade Colaborativa</h2>
+        <p>
+          O Q.A.B.A.I promove a <strong>troca de conhecimento</strong> entre os usuários. Aqui, cada usuário pode ser tanto aprendiz quanto educador.
+        </p>
+      
+        <h2>🔐 Segurança e Cadastro</h2>
+        <p>Para participar, será necessário criar uma conta com:</p>
+        <ul>
+          <li>Nome ou apelido</li>
+          <li>E-mail</li>
+          <li>Senha</li>
+        </ul>
+        <p>Essas informações garantem um ambiente organizado e seguro para todos.</p>
+      
+        <h2>👥 Público-Alvo</h2>
+        <p>Nosso público são:</p>
+        <ul>
+          <li>Adultos iniciantes ou intermediários em informática</li>
+          <li>Pessoas a partir de <strong>18 anos</strong></li>
+          <li>Interessados em aprender a usar computadores no dia a dia</li>
+        </ul>
+      
+        <h2>📱 Acessibilidade e Compatibilidade</h2>
+        <ul>
+          <li>Site responsivo (funciona bem em computadores, tablets e celulares)</li>
+          <li>Necessário conexão com a internet</li>
+          <li>Login obrigatório para publicar ou visualizar conteúdo</li>
+        </ul>
+      
+        <h2>💬 Por Que Escolher o Q.A.B.A.I?</h2>
+        <blockquote>
+          “Receba e compartilhe conhecimento, e cresça junto em comunidade.”
+        </blockquote>
+        <ul>
+          <li>Ambiente confiável e educativo</li>
+          <li>Interface amigável e intuitiva</li>
+          <li>Aprendizado colaborativo</li>
+        </ul>
+      
+        <h2>🔍 Sites que Nos Inspiraram</h2>
+        <h3><a href="https://perguntados.com" target="_blank">Perguntados</a></h3>
+        <ul>
+          <li><strong>Positivos:</strong> Design moderno, interface intuitiva, muitas áreas de aprendizado</li>
+          <li><strong>Negativos:</strong> Faltam materiais de apoio, tempo de resposta curto, perguntas muito específicas</li>
+        </ul>
+      
+        <h3><a href="https://kahoot.com" target="_blank">Kahoot</a></h3>
+        <ul>
+          <li><strong>Positivos:</strong> Jogos ao vivo, fácil de usar, acessível em todos os dispositivos</li>
+          <li><strong>Negativos:</strong> Requer internet estável, versão gratuita limitada, foco mais competitivo</li>
+        </ul>
+      
+        <h3><a href="https://www.sporcle.com" target="_blank">Sporcle</a></h3>
+        <ul>
+          <li><strong>Positivos:</strong> Grande variedade de temas, quizzes comunitários, sem login obrigatório</li>
+          <li><strong>Negativos:</strong> Interface antiga, conteúdo difícil para iniciantes, maioria em inglês</li>
+        </ul>
+      
+        <h2>🧪 Protótipos e Futuras Funcionalidades</h2>
+        <p>Estamos desenvolvendo as primeiras telas do Q.A.B.A.I, incluindo:</p>
+        <ul>
+          <li>Tela inicial com acesso rápido ao conteúdo</li>
+          <li>Área do usuário com pontuação e histórico</li>
+          <li>Sistema de criação e moderação de perguntas</li>
+          <li>Modo de estudo individual com sugestões personalizadas</li>
+        </ul>
+      
+        <h2>📩 Fale Conosco</h2>
+        <p>Tem sugestões, dúvidas ou quer participar do projeto? <strong>Entre em contato conosco!</strong></p>
+
+    </main>
+    <footer>
+        <div>
+            <a href="https://github.com/MrMeta-24">Meu github</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
