@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.A.B.A.I</title>
+    <link rel="stylesheet" href="comunidade-assets/comunidade.css">
+    <script defer src="comunidade-assets/comunidade.js"></script>
+</head>
+
+<body>
+
+    <header id="inicio">
+        <button onclick="toggleAside()">Menu</button>
+        <h1>Q.A.B.A.I</h1>
+    </header>
+
+    <aside id="asside">
+        <button class="fechar-btn" onclick="fecharAside()">X</button>
+        <div>
+            <a href="inicio.html">Inicio</a>
+            <a href="comunidade.html">Comunidade</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="materiais.html">Materiais de estudo</a>
+        </div>
+    </aside>
+
+    <main>
+        <section class="chats-container">
+            <div class="chats-sidebar">
+                <h2>Tópicos de Dúvidas</h2>
+                <ul id="chat-list">
+                    <li class="chat-item active" data-chat-id="geral">Dúvidas Gerais</li>
+                    <li class="chat-item" data-chat-id="programacao">Programação</li>
+                    <li class="chat-item" data-chat-id="design">Design</li>
+                </ul>
+                <button id="new-chat-btn">Novo Tópico</button>
+            </div>
+            <div class="chat-main">
+                <h2 id="chat-title">Dúvidas Gerais</h2>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message received">Olá! Bem-vindo ao chat de Dúvidas Gerais.</div>
+                    <div class="message sent">Como posso fazer uma pergunta?</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Digite sua dúvida...">
+                    <button id="send-message-btn">Enviar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a href="https://github.com/MrMeta-24">Meu GitHub</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

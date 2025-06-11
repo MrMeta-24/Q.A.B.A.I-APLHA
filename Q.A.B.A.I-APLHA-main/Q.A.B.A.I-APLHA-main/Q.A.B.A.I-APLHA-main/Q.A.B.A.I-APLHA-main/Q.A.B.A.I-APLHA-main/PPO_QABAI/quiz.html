@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q.A.B.A.I - Quizzes</title>
+    <link rel="stylesheet" href="quiz-assets/quiz.css">
+    <link rel="stylesheet" href="assets/responsive-grid.css">
+</head>
+
+<body>
+
+    <header id="inicio">
+        <button onclick="toggleAside()">Menu</button>
+        <h1>Q.A.B.A.I</h1>
+        <button class="btn-login" onclick="location.href='login.html'">Login</button>
+    </header>
+
+    <aside id="asside">
+        <button class="fechar-btn" onclick="fecharAside()">X</button>
+        <div>
+            <a href="inicio.html">Início</a>
+            <a href="comunidade.html">Comunidade</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="materiais.html">Materiais de estudo</a>
+        </div>
+    </aside>
+
+    <main>
+        <div id="quiz-menu">
+            <h2>Escolha uma opção:</h2>
+            <button onclick="showQuizPlayer()">Fazer Quiz</button>
+            <button onclick="showQuizCreator()">Criar Quiz</button>
+        </div>
+
+        <div id="quiz-player" style="display: none;">
+            <h2>Fazer Quiz</h2>
+            <div id="quiz-container">
+                </div>
+            <button id="submit-quiz" style="display: none;">Finalizar Quiz</button>
+            <div id="quiz-results" style="display: none;">
+                </div>
+        </div>
+
+        <div id="quiz-creator" style="display: none;">
+            <h2>Criar Novo Quiz</h2>
+            <form id="create-quiz-form">
+                <label for="quiz-title">Título do Quiz:</label>
+                <input type="text" id="quiz-title" required><br><br>
+
+                <div id="questions-container">
+                    <h3>Perguntas:</h3>
+                    <div class="question-block">
+                        <label>Pergunta 1:</label><br>
+                        <input type="text" class="question-text" placeholder="Digite a pergunta" required><br>
+                        <label>Opções (separadas por vírgula):</label><br>
+                        <input type="text" class="question-options" placeholder="Ex: Opção A,Opção B,Opção C" required><br>
+                        <label>Resposta Correta (texto exato da opção):</label><br>
+                        <input type="text" class="question-answer" placeholder="Ex: Opção B" required><br><br>
+                    </div>
+                </div>
+                <button type="button" onclick="addQuestionField()">Adicionar Pergunta</button><br><br>
+                <button type="submit">Salvar Quiz</button>
+            </form>
+            <div id="quiz-creation-message" style="display: none;">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <a href="https://github.com/MrMeta-24">Meu github</a>
+        </div>
+    </footer>
+
+    <script defer src="quiz-assets/quiz.js"></script>
+    <script>
+        // Funções para o menu do aside (se você já tem isso em outro lugar, pode remover)
+        function toggleAside() {
+            document.getElementById('asside').classList.toggle('active');
+        }
+
+        function fecharAside() {
+            document.getElementById('asside').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
